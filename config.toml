@@ -1,6 +1,7 @@
 title = "Linro"
 languageCode = "zh-cn"
 theme = "ananke"
+baseURL = "https://linyxus.github.io"
 
 MetaDataFormat = "yaml"
 SectionPagesMenu = "main"
