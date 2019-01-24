@@ -1,31 +1,44 @@
-title = "Linro"
-languageCode = "zh-cn"
-theme = "ananke"
+baseurl                 = "/"               # Your domain name. Must end with "/"
+languageCode            = "zh-cn"
+defaultContentLanguage  = "zh"
+isMultilingual          = false
+title                   = "Linro"
+theme                   = "sam"
+pygmentsStyle           = "monokai"                     # https://help.farbox.com/pygments.html
+pygmentsCodefences      = true
+# googleAnalytics         = ""             # Tracking code, eg. "UA-111111111-1"
 baseURL = "https://linyxus.github.io"
 
-MetaDataFormat = "yaml"
-SectionPagesMenu = "main"
-Paginate = 9
-googleAnalytics = ""
-enableRobotsTXT = true
-
-pygmentsCodeFences = true
-
-[sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-  filename = "sitemap.xml"
-
 [params]
-  favicon = ""
-  description = "Hello, world."
-  facebook = ""
-  twitter = ""
-  instagram = ""
-  youtube = ""
-  github = ""
-  gitlab = ""
-  linkedin = ""
-  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
-  background_color_class = "bg-black"
-  recent_posts_number = 8
+    dateform            = "Mon Jan 02, 2006"
+    dateformfull        = "Mon Jan 2 2006 15:04:05 EST"
+#    favicon             = "sam.ico"
+    homepage            = "main"                        # What to call the home page link
+# #    galleryFolder       = "images/"                     # Where you've put your images, after "/content/gallery/"
+#     clickablePhotos     = false                          # Allow links to the full size images
+#     smallPreviewImages   = true                         # Show small images from the subfolder instead of the big versions in the gallery
+#                                                          # Note: This will only become active if clickablePhotos is also true.
+#     smallImagesSubfolder = "small/"                      # The subfolder for the small versions of the images under the gallery (with trailing slash)
+#                                                          # For each image the small version has to have the same filename as the big version.
+    footerText          = "Linro :: blog of Linyxus"
+
+# Metadata
+    description         = "Linro :: blog of Linyxus"            # Max 160 characters show in search results
+    twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
+    primaryImage        = "tn.png"                     # Image that shows on Twitter cards and OpenGraph links
+
+[[params.mainMenu]]
+    link = "/posts"
+    text = "writings"
+
+# [[params.mainMenu]]
+#     link = "/gallery"
+#     text = "gallery"
+
+[[params.mainMenu]]
+    link = "/me"
+    text = "me"
+
+[[params.mainMenu]]
+    link = "/about"
+    text = "about"
