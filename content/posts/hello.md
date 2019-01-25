@@ -2,6 +2,7 @@
 title: "Hello, Hugo"
 date: 2019-01-23T19:44:21+08:00
 featured_image: '/images/hello-cover.jpg'
+showDate: true
 tags: ["text"]
 ---
 
