@@ -30,7 +30,3 @@ tags: ["notes", "machine learning"]
 - `GraphSAGE </files/gat-graphsage-hgcn-notes/graphsage.pdf>`_
 
 - `H-GCN </files/gat-graphsage-hgcn-notes/h-gcn.pdf>`_
-
-
-
-
