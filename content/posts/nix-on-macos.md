@@ -26,7 +26,7 @@ $ sh <(curl https://nixos.org/nix/install)
 
 然而在Calalina之后，官方默认的安装脚本便失效了。主要原因是：**Apple改变了macOS的文件结构，将系统与用户数据挂载到了两个分区，`/`变为了只读目录。**
 
-然而，`nix`的所有文件都需要放到`/nix`下，`/`变为只读直接导致`nix`安装到Catalina上。
+然而，`nix`的所有文件都需要放到`/nix`下，`/`变为只读直接导致`nix`无法安装到Catalina上。
 
 ## 解决方法
 
@@ -82,7 +82,7 @@ nix-env -f '<nixpkgs>' -iA cabal-install
 
 > If any of these variables are set when running the Nix installer, then the installer will create an override file at `/etc/systemd/system/nix-daemon.service.d/override.conf` so nix-daemon will use them.
 
-不幸的是，者并不适用于macOS：`launchd`没有办法很容易地override服务配置文件中的一些字段。为了解决这一问题，最简单的方法是新建一个service，将原来的daemon service删除。
+不幸的是，这并不适用于macOS：`launchd`没有办法很容易地override服务配置文件中的一些字段。为了解决这一问题，最简单的方法是新建一个service，将原来的daemon service删除。
 
 ```XML
 <?xml version="1.0" encoding="UTF-8"?>
