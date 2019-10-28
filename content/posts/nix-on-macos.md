@@ -1,5 +1,5 @@
 ---
-title: "Nix on Macos, Made Easy"
+title: "Nix on macOS, Made Easy"
 date: 2019-10-28T15:14:00+08:00
 showDate: true
 draft: false
