@@ -53,7 +53,7 @@ tags: ["note", "physics"]
 
 1. 位移不等于路程：位移是矢量，路程是标量
 
-2. :math:`\lim_{\Delta{t} \rightarrow 0} |\vec{\Delta r}| = \Delta s` ，也即 :math:`|dr| = ds`
+2. :math:`\lim_{\Delta{t} \rightarrow 0} |\Delta \vec r| = \Delta s` ，也即 :math:`|dr| = ds`
 
 速度
 ----
@@ -75,9 +75,9 @@ tags: ["note", "physics"]
 
 已知质点运动的轨迹：
 
-:math:`\vec{e_n}` 法向单位矢量，指向轨迹曲线 **内侧**
+:math:`\vec{e}_n` 法向单位矢量，指向轨迹曲线 **内侧**
 
-:math:`\vec{e_{\tau}}` 切向单位矢量，指向自然坐标正向
+:math:`\vec{e}_{\tau}` 切向单位矢量，指向自然坐标正向
 
 不是恒矢量，会随着质点的位置改变方向。
 
@@ -85,7 +85,7 @@ tags: ["note", "physics"]
 
 .. math::
 
-   \vec{v} = v \vec{e_{\tau}}
+   \vec{v} = v \vec{e}_{\tau}
 
 圆周运动的角量参数
 ==================

@@ -86,7 +86,7 @@ Precedence of logical connectives
 
 .. math::
 
-   \neg \gt (\vee, \wedge) \gt (\rightarrow, \leftrightarrow)
+   \neg > (\vee, \wedge) > (\rightarrow, \leftrightarrow)
 
 
 Proposition Equivalence
