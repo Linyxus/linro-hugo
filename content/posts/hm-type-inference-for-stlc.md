@@ -7,8 +7,8 @@ draft = false
 showDate = true
 +++
 
-In this post, we will present the principles of Algorithm W and Algorithm U,
-which implement the type inference of Hindley-Milner type system.
+In this post, we will introduce the principles of Algorithm W and Algorithm U,
+the basis of the type inference in Hindley-Milner type system.
 
 Firstly, we describe a small calculus, the well-known Simply-Typed
 Lambda Calculus _(STLC)_.
@@ -97,27 +97,27 @@ X is fresh, C = C1 ∪ C2 ∪ {T1 = T2 -> X}
 ```
 
 The rules T-True, T-False and T-Zero are simply rules for constants. The rules
-T-Pred, T-Succ and T-IsZero deals with operators on Nat, and they enforce the
-parameter type to be Nat by adding a constraint T = Nat.
+T-Pred, T-Succ and T-IsZero deals with operators on `Nat`, and they enforce the
+parameter type to be `Nat` by adding a constraint `T = Nat`.
 
 The rule T-If types the If expression, by requiring that the condition is of
-type Bool and the type of the two bodies are the same.
+type `Bool` and the type of the two bodies are the same.
 
-The rule var reads the type of variable x in the environment.
+The rule var reads the type of variable `x` in the environment.
 
 The rule T-AbsGiven deals with lambda expressions where ascription of the
 parameter is given. The T-AbsInfer rule generate a new type variable for the
 lambda parameter and type the lambda as in T-AbsGiven.
 
-The T-App types lambda application. It asserts that t1 is of type T2 -> X for
-some fresh type variable X throw constraints.
+The T-App types lambda application. It asserts that `t1` is of type `T2 -> X` for
+some fresh type variable `X`.
 
 
 ### Algorithm U: Constraint Unification {#algorithm-u-constraint-unification}
 
 The constraints in our case are simply equations. Algorithm U will unify these
 equations by processing them one by one to produce a substitution. For each
-equation S = T,
+equation `S = T`,
 
 1.  S equals to T. Do nothing.
 
@@ -125,12 +125,12 @@ equation S = T,
     1.  If S appears in T, produce an error, since this is an infinite recursive
         type.
 
-    2.  Otherwise, add a substitution S -> T.
+    2.  Otherwise, add a substitution `S -> T`.
 
 3.  If T is a variable, similar to the previous case.
 
 4.  If both S and T are type constructors, which means they are both function
-    types in our simple calculus, i.e. S1 -> S2 = T1 -> T2. We unify S1 and T1,
+    types in our simple calculus, i.e. `S1 -> S2 = T1 -> T2`. We unify S1 and T1,
     S2 and T2 recursively.
 
 5.  In other cases, it fails.
@@ -296,7 +296,7 @@ Via unification, we can derive that
 Therefore, the `letrec` expression can be typed as `Nat -> Bool`.
 
 Note that, to show that `letrec` and the newly introduced typing rule is just
-some 'syntax sugars', we can express what have done only with `fix` with tuple types.
+some 'syntax sugars', we can express what have done only with `fix` and tuple types.
 
 ```haskell
 let metaEvenOdd = \(even, odd) ->
@@ -382,7 +382,8 @@ subtyping relations, we can generalize them just as if they are not constrained,
 given that we record the required subtyping constraints into the type scheme. In
 this way, the `f` will be typed as
 `forall X <: { x : Nat, y : Nat } -> Nat`,
-which will handle outputs like `{ x = 1, y = 1, z = true }`.
+This change will enable the function to handle inputs like `{ x = 1, y = 1, z =
+true }`, which will fails the type-check without the generalization.
 Such technique can be named as _let subtyping polymorphism_.
 
 
