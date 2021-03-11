@@ -384,3 +384,8 @@ this way, the `f` will be typed as
 `forall X <: { x : Nat, y : Nat } -> Nat`,
 which will handle outputs like `{ x = 1, y = 1, z = true }`.
 Such technique can be named as _let subtyping polymorphism_.
+
+
+## References {#references}
+
+FOS 2020: <https://fos2020.github.io>

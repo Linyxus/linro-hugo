@@ -1012,3 +1012,6 @@ this way, the =f= will be typed as
 which will handle outputs like ={ x = 1, y = 1, z = true }=.
 Such technique can be named as /let subtyping polymorphism/.
 
+
+** References
+FOS 2020: https://fos2020.github.io
