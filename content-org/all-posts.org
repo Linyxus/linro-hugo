@@ -758,6 +758,14 @@ lambda parameter and type the lambda as in T-AbsGiven.
 The T-App types lambda application. It asserts that =t1= is of type =T2 -> X= for
 some fresh type variable =X=.
 
+Note that we do not specify the rule for =let=, since it can be easily
+transformed into a combination of lambda abstraction and application. For any
+let expression =let x : T = t1 in t2=, we can transform it into
+=(\x: T. t2) t1= and type it with existing rules.
+
+We can add additional power to =let= forms to make things more interesting. We
+will discuss it in the following section on let polymorphism.
+
 *** Algorithm U: Constraint Unification
 
 The constraints in our case are simply equations. Algorithm U will unify these
