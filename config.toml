@@ -7,7 +7,7 @@ theme                   = "sam"
 pygmentsStyle           = "monokai"                     # https://help.farbox.com/pygments.html
 pygmentsCodefences      = true
 # googleAnalytics         = ""             # Tracking code, eg. "UA-111111111-1"
-baseURL = "https://blog.linyxus.xyz"
+baseURL = "https://linyxus.github.io"
 
 [params]
     dateform            = "Mon Jan 02, 2006"
